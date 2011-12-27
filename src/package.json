@@ -1,0 +1,17 @@
+{ "name":         "twiliohacks"
+, "version":      "0.0.1"
+, "description":  "Poking at the box"
+, "keywords":     ["twilio"]
+, "contributors":
+  [ "Oskari Kettunen"]
+, "repository":
+  { "type": "git"
+  , "url":  "git://github.com/aok/twiliohacks.git"
+  }
+, "dependencies":
+  { "coffee-script":  "1.2.x"
+  , "express":        "2.x"
+  }
+, "os":   ["linux", "macos"]
+, "main": "server.coffee"
+}
