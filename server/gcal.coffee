@@ -2,7 +2,7 @@ _ = require 'underscore'
 ical = require 'ical'
 moment = require 'moment'
 
-gcalUrl = 'http://www.google.com/calendar/ical/aok%40reaktor.fi/private-c13abbdb0c9fd78c9bdcc6bde23b7e36/basic.ics'
+finnishPublicHolidays = 'http://www.google.com/calendar/ical/en.finnish%23holiday%40group.v.calendar.google.com/public/basic.ics'
 
 collect = (callback) ->
   (err, data) ->
@@ -18,7 +18,7 @@ collect = (callback) ->
     callback evts
 
 futureEvents = (emitter) ->
-  ical.fromURL(gcalUrl,{}, collect (evts) ->
+  ical.fromURL(finnishPublicHolidays,{}, collect (evts) ->
     emitter evts
   )
 
