@@ -11,6 +11,9 @@
 , "dependencies":
   { "coffee-script":  "1.2.x"
   , "express":        "2.x"
+  , "ical":           "0.0.x"
+  , "underscore":     "1.2.x"  
+  , "moment":         "1.1.x"
   }
 , "os":   ["linux", "macos"]
 , "main": "server.coffee"
