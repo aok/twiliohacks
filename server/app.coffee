@@ -7,18 +7,18 @@ app.configure( ->
   app.set('view engine', 'hbs')
 )
 
-app.get('/', (req, res) ->
-  res.contentType('xml')
-  res.render('hello', {name: 'World'})
-)
-
-app.get('/cal', (req, res) ->
+app.get('/voice', (req, res) ->
   gcal ( (events) ->
     ctx = {}
     ctx.events = events
     res.contentType('xml')
     res.render('gcal', ctx)
   )
+)
+
+app.post('/sms', (req,res) ->
+  res.contentType('xml')
+  res.render('sms', {})
 )
 
 
