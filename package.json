@@ -17,5 +17,5 @@
   , "hbs":            "1.0.x" 
   }
 , "os":   ["linux", "macos"]
-, "main": "server.coffee"
+, "main": "server/app.coffee"
 }
