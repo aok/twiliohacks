@@ -11,6 +11,7 @@ app.get('/', (req, res) ->
   res.render('hello', {name: 'World'})
 )
 
-app.listen(3000);
-console.log 'Express server listening on port 3000'
+port = process.env.PORT || 3000
+app.listen(port);
+console.log("Express server listening on port %s", port)
 
