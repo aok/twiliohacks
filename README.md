@@ -1,7 +1,7 @@
 Poking at the box.
 
 # Things to try
-* Read my GCal appointments
 
 # Done
+* Read upcoming GCal appointments
 * Hello world
