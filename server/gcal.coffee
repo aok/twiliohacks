@@ -17,8 +17,8 @@ collect = (callback) ->
       .value()
     callback evts
 
-futureEvents = (emitter) ->
-  ical.fromURL(finnishPublicHolidays,{}, collect (evts) ->
+futureEvents = (emitter, url = finnishPublicHolidays) ->
+  ical.fromURL(url,{}, collect (evts) ->
     emitter evts
   )
 

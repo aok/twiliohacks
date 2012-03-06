@@ -1,5 +1,9 @@
 { "name":         "twiliohacks"
-, "version":      "0.0.1"
+, "version":      "0.0.2"
+, "engines": {
+    "node": "0.6.x",
+    "npm":  "1.1.x"
+  }
 , "description":  "Poking at the box"
 , "keywords":     ["twilio"]
 , "contributors":
@@ -14,7 +18,8 @@
   , "ical":           "0.0.x"
   , "underscore":     "1.2.x"  
   , "moment":         "1.1.x"
-  , "hbs":            "1.0.x" 
+  , "hbs":            "1.0.x"
+  , "redis-url":      "0.1.x" 
   }
 , "os":   ["linux", "macos"]
 , "main": "server/app.coffee"

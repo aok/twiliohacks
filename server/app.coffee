@@ -1,3 +1,4 @@
+redis = require('redis-url').connect(process.env.REDISTOGO_URL)
 express = require 'express'
 gcal = require './gcal'
 
@@ -8,12 +9,20 @@ app.configure( ->
 )
 
 app.get('/voice', (req, res) ->
-  gcal ( (events) ->
-    ctx = {}
-    ctx.events = events
-    res.contentType('xml')
-    res.render('gcal', ctx)
-  )
+  console.log "Call from: "+req.query.From
+  blurt = (error, url) ->
+    renderEvents = (evts) ->
+      ctx = {}
+      ctx.events = evts
+      res.render 'gcal',ctx
+    if error
+      res.render 'error',{}
+    else
+      gcal(renderEvents, url)
+
+  res.contentType('xml')
+  key = 'caller:'+req.query.From+':calendar.url'
+  redis.get(key, blurt)
 )
 
 app.post('/sms', (req,res) ->
